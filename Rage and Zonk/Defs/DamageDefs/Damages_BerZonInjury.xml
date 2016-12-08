@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- = Vanilla abstracts, so I won't worry about .xml inheritance = -->
+
+  <DamageDef Name="LocalInjuryBase" Abstract="True">
+    <workerClass>DamageWorker_AddInjury</workerClass>
+  </DamageDef>
+
+	<!-- =================== Actual modded content ==================== -->
+
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>Rager</defName>
+    <label>rage shot</label>
+    <externalViolence>false</externalViolence>
+    <harmsHealth>false</harmsHealth>
+    <makesBlood>false</makesBlood>
+    <battleWound>false</battleWound>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>Berserked</hediff>
+    <hediffSolid>Bruise</hediffSolid>
+    <harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+    <hasChanceToAdditionallyDamageInnerSolidParts>false</hasChanceToAdditionallyDamageInnerSolidParts>
+    <impactSoundType>Bullet</impactSoundType>
+  </DamageDef>
+
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>Zonker</defName>
+    <label>zonk shot</label>
+    <externalViolence>false</externalViolence>
+    <harmsHealth>false</harmsHealth>
+    <makesBlood>false</makesBlood>
+    <battleWound>false</battleWound>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>DrugDazed</hediff>
+    <hediffSolid>Bruise</hediffSolid>
+    <harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+    <hasChanceToAdditionallyDamageInnerSolidParts>false</hasChanceToAdditionallyDamageInnerSolidParts>
+    <impactSoundType>Bullet</impactSoundType>
+  </DamageDef>
+
+</Defs>

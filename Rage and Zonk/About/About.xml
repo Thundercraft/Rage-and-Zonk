@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Rage and Zonk</name>
+  <author>Thundercraft</author>
+  <targetVersion>0.15.1284</targetVersion>
+  <description>Adds two safely non-lethal weapons:
+
+ * Rage gun: Smithing requires 4 Medikits, among other resources. Darted targets will go berserk. Enraged, they will charge in as fast as their legs will carry them. They will take the shortest path to pummel the shooter, even if it means bashing down the nearest door. It inflicts a lot of pain. In theory, enough shots might put the enemy into shock.
+
+ * Zonk gun: Smithing requires 3 Yayo and 2 Neutroamine, among other resources. Darted targets will be doped into a drugged daze. They will become sluggish, barely able to shoot, and soon wander around aimlessly. Before long, they may start casting off their clothes or gear.
+
+For the sake of balance, these guns have a rather poor accuracy and slow fire rate. Maximum range is a bit less than the survival rifle (32 vs 37).
+</description>
+</ModMetaData>

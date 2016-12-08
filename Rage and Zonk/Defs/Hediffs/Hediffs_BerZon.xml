@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- = Vanilla abstracts, so I won't worry about .xml inheritance = -->
+
+  <HediffDef Name="InjuryBase" Abstract="True">
+    <hediffClass>Hediff_Injury</hediffClass>
+    <displayWound>true</displayWound>
+  </HediffDef>
+
+	<!-- =================== Actual modded content ==================== -->
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>Berserked</defName>
+    <label>berserked</label>
+    <comps>
+      <li>
+        <compClass>HediffComp_Disappears</compClass>
+        <disappearsAfterTicks>
+          <min>6000</min>
+          <max>9000</max>
+        </disappearsAfterTicks>
+		<stateEffecter>Manhunter</stateEffecter>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.3</painPerSeverity>
+      <bleeding>0</bleeding>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Destroyed</destroyedLabel>
+    </injuryProps>
+	<lethalSeverity>-99</lethalSeverity>
+	<!-- Optional. Defaults to -1 (insignificant). If the hediff's severity reaches this level, the pawn will die -->
+    <stages>
+      <li> 
+        <lifeThreatening>false</lifeThreatening>
+		<deathMtbDays>-99</deathMtbDays>
+		<!-- Optional. Defaults to -1 (insignificant). If above 0, the pawn might die randomly. Higher values decrease death likelihood -->
+		<setMinPartEfficiency>1</setMinPartEfficiency> <!-- to avoid penalties from injuries, manipulation is set to 100% -->
+		<mentalStateGivers>
+			<li>
+				<mentalState>Berserk</mentalState>
+				<mtbDays>0.001</mtbDays>
+			</li>
+		</mentalStateGivers>
+		<capMods>
+			<li>
+				<capacity>Moving</capacity>
+				<offset>1.5</offset>
+			</li>
+		</capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>DrugDazed</defName>
+    <label>drug dazed</label>
+    <comps>
+      <li>
+        <compClass>HediffComp_Disappears</compClass>
+        <disappearsAfterTicks>
+          <min>6000</min>
+          <max>9000</max>
+        </disappearsAfterTicks>
+		<stateEffecter>Drunk</stateEffecter>
+		<chemical>Psychite</chemical>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.01</painPerSeverity>
+      <bleeding>0</bleeding>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Destroyed</destroyedLabel>
+    </injuryProps>
+	<lethalSeverity>-99</lethalSeverity>
+	<!-- Optional. Defaults to -1 (insignificant). If the hediff's severity reaches this level, the pawn will die -->
+    <stages>
+      <li> 
+        <lifeThreatening>false</lifeThreatening>
+		<deathMtbDays>-99</deathMtbDays>
+		<!-- Optional. Defaults to -1 (insignificant). If above 0, the pawn might die randomly. Higher values decrease death likelihood -->
+		<setMinPartEfficiency>1</setMinPartEfficiency> <!-- to avoid penalties from injuries, manipulation is set to 100% -->
+		<mentalStateGivers>
+			<li>
+				<mentalState>WanderPsychotic</mentalState>
+				<mtbDays>0.01</mtbDays>
+			</li>
+		</mentalStateGivers>
+		<statOffsets>
+			<MoveSpeed>-0.25</MoveSpeed>
+			<AimingDelayFactor>3</AimingDelayFactor>
+			<ShootingAccuracy>-3</ShootingAccuracy>
+		</statOffsets>
+      </li>
+    </stages>
+	<makesAlert>false</makesAlert>
+  </HediffDef>
+  
+</Defs>
